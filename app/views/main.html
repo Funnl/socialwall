@@ -8,52 +8,52 @@
 </div>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4" ng-controller="twitterCtrl">
     <h4 class="text-center">Twitter</h4>
-    <div class="panel panel-default">
+    <div class="panel panel-default" ng-repeat="tweet in tweets">
       <div class="panel-heading">
-        <img class="userimage" src="http://placehold.it/50x50">
+        <img class="userimage" src="{{tweet.userimageUrl}}">
         <div class="details">
-          <p class="name">Name</p>
-          <p class="username">@username</p>
+          <p class="name">{{tweet.name}}</p>
+          <p class="username">@{{tweet.username}}</p>
           <p class="post-time">5 min ago</p>
         </div>
       </div>
       <div class="content">
-        <p>TWEET CONTENT GOES HERE</p>
+        <p>{{tweet.content}}</p>
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4" ng-controller="instagramCtrl">
     <h4 class="text-center">Instagram</h4>
-    <div class="panel panel-default">
+    <div class="panel panel-default" ng-repeat="photo in photos">
       <div class="panel-heading">
-        <img class="userimage" src="http://placehold.it/50x50">
+        <img class="userimage" src="{{photo.userimageUrl}}">
         <div class="details">
-          <p class="name">Name</p>
-          <p class="username">@username</p>
+          <p class="name">{{photo.name}}</p>
+          <p class="username">@{{photo.username}}</p>
           <p class="post-time">5 min ago</p>
         </div>
       </div>
       <div class="content">
-        <img class="text-center" height="300" width="300" src="http://placehold.it/300x300">
-        <p>INSTAGRAM IMAGE TEXT GOES HEREINSTAGRAM IMAGE TEXT GOES HEREINSTAGRAM IMAGE TEXT GOES HEREINSTAGRAM IMAGE TEXT GOES HEREINSTAGRAM IMAGE TEXT GOES HERE</p>
+        <img class="text-center" height="300" width="300" src="{{photo.imageUrl}}">
+        <p>{{photo.content}}</p>
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4" ng-controller="vineCtrl">
     <h4 class="text-center">Vine</h4>
-    <div class="panel panel-default">
+    <div class="panel panel-default" ng-repeat="vine in vines">
       <div class="panel-heading">
-        <img class="userimage" src="http://placehold.it/50x50">
+        <img class="userimage" src="{{vine.userimageUrl}}">
         <div class="details">
-          <p class="name">Name</p>
-          <p class="username">@username</p>
+          <p class="name">{{vine.name}}</p>
+          <p class="username">@{{vine.username}}</p>
           <p class="post-time">5 min ago</p>
         </div>
       </div>
       <div class="content">
-        <p>VINE VIDEO TEXT GOES HERE</p>
+        <p>{{vine.content}}</p>
       </div>
     </div>
   </div>
