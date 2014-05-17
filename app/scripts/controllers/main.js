@@ -8,7 +8,8 @@ angular.module('socialwallApp')
   		// Handle the new instragram posts
   		// something like...
 
-  		posts.forEach(function(photo, index, arr){ // don't remember my js forEach...
+  		$scope.photos = [];
+      posts.forEach(function(photo, index, arr){ // don't remember my js forEach...
   			$scope.photos.push(photo);
   			console.log("Added photo");
   			console.log(JSON.stringify(photo));
@@ -141,6 +142,7 @@ angular.module('socialwallApp')
   			photo.caption.friendly_time = dt.fromNow().toString();
   			console.log(photo.images.thumbnail.url);
   			console.log(photo.images.standard_resolution.url);
+        $scope.$digest();
   		})
   	})
     $scope.awesomeThings = [

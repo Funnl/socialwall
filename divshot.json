@@ -1,7 +1,7 @@
 {
   "name": "socialwall",
   "root": "./dist",
-  "clean_urls": true,
+  "clean_urls": false,
   "cache_control": {},
   "routes": {}
 }

@@ -8,7 +8,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-4" ng-controller="twitterCtrl">
+  <div class="col-md-4">
     <h4 class="text-center">Twitter</h4>
     <div class="panel panel-default" ng-repeat="tweet in tweets">
       <div class="panel-heading">
@@ -24,11 +24,11 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4" ng-controller="instagramCtrl">
+  <div class="col-md-4">
     <h4 class="text-center">Instagram</h4>
     <div class="panel panel-default" ng-repeat="photo in photos">
       <div class="panel-heading">
-        <img class="userimage" ng-src="{{photo.user.profile_picture}">
+        <img class="userimage" height="50" width="50" ng-src="{{photo.user.profile_picture}}">
         <div class="details">
           <p class="name">{{photo.user.full_name}}</p>
           <p class="username">@{{photo.user.username}}</p>
@@ -41,7 +41,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4" ng-controller="vineCtrl">
+  <div class="col-md-4">
     <h4 class="text-center">Vine</h4>
     <div class="panel panel-default" ng-repeat="vine in vines">
       <div class="panel-heading">
