@@ -1,6 +1,6 @@
 {
   "name": "socialwall",
-  "root": "./",
+  "root": "./app",
   "clean_urls": true,
   "cache_control": {},
   "routes": {}
