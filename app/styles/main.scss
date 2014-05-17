@@ -2,6 +2,58 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
+.content {
+    padding: 10px 10px 10px 10px;
+}
+
+.content img {
+    margin-left: 15px;
+    padding-top: 15px;
+}
+
+.content p {
+    margin-left: 15px;
+    padding-top: 10px
+}
+
+.name {
+    font-weight: bold;
+    float: left;
+}
+
+.post-time {
+    float: right;
+}
+
+.details {
+    margin-left: 70px;
+    height: 50px;
+    padding-top: 5px;
+}
+
+.userimage {
+    float: left;
+}
+
+.username {
+    float: left;
+    margin-top: 22px;
+    margin-left: -40px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 183px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -11,7 +63,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
+    padding-top: 90px;
     padding-bottom: 20px;
 }
 
@@ -29,11 +81,11 @@ body {
 }
 
 /* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+.header h2 {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 20px 10px 0;
+    float: left;
 }
 
 /* Custom page footer */
@@ -70,7 +122,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
+        max-width: 80%;
     }
 
     /* Remove the padding we set earlier */
