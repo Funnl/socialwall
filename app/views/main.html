@@ -28,16 +28,16 @@
     <h4 class="text-center">Instagram</h4>
     <div class="panel panel-default" ng-repeat="photo in photos">
       <div class="panel-heading">
-        <img class="userimage" src="{{photo.userimageUrl}}">
+        <img class="userimage" src="{{photo.user.profile_picture}">
         <div class="details">
-          <p class="name">{{photo.name}}</p>
-          <p class="username">@{{photo.username}}</p>
-          <p class="post-time">5 min ago</p>
+          <p class="name">{{photo.user.full_name}}</p>
+          <p class="username">@{{photo.user.username}}</p>
+          <p class="post-time">{{photo.caption.friendly_time}}</p>
         </div>
       </div>
       <div class="content">
-        <img class="text-center" height="300" width="300" src="{{photo.imageUrl}}">
-        <p>{{photo.content}}</p>
+        <img class="text-center" height="300" width="300" ng-src="{{photo.images.standard_resolution.url}}">
+        <p>{{photo.caption.text}}</p>
       </div>
     </div>
   </div>
