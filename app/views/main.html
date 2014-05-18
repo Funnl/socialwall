@@ -10,14 +10,14 @@
 <div class="row">
   <div class="col-md-4">
     <h4 class="text-center">Twitter</h4>
-    <div class="panel panel-twitter" ng-repeat="tweet in tweets" ng-animate="'animate'">
+    <div class="panel panel-twitter" ng-repeat="tweet in tweets" ng-animate="{ enter: 'enter', leave: 'leave', move: 'move' }">
       <div class="panel-heading panel-heading-twitter">
         <img class="userimage" ng-src="{{tweet.user.profile_image_url}}">
         <div class="details">
           <p class="name">{{tweet.user.name}}</p>
           <p class="username">@{{tweet.user.screen_name}}</p>
-          <p class="post-time">{{tweet.friendly_time}}</p>
         </div>
+          <p class="post-time">{{tweet.friendly_time}}</p>
       </div>
       <div class="content">
         <p>{{tweet.text}}</p>
@@ -26,14 +26,14 @@
   </div>
   <div class="col-md-4">
     <h4 class="text-center">Instagram</h4>
-    <div class="panel panel-instagram" ng-repeat="photo in photos" ng-animate="'animate'">
+    <div class="panel panel-instagram" ng-repeat="photo in photos" ng-animate="{ enter: 'enter', leave: 'leave', move: 'move' }">
       <div class="panel-heading panel-heading-instagram">
         <img class="userimage" height="50" width="50" ng-src="{{photo.user.profile_picture}}">
         <div class="details">
           <p class="name">{{photo.user.full_name}}</p>
           <p class="username">@{{photo.user.username}}</p>
-          <p class="post-time">{{photo.caption.friendly_time}}</p>
         </div>
+          <p class="post-time">{{photo.caption.friendly_time}}</p>
       </div>
       <div class="content">
         <img class="text-center" height="300" width="300" ng-src="{{photo.images.standard_resolution.url}}">
@@ -44,26 +44,21 @@
   <div class="col-md-4">
     <h4 class="text-center">Geographical Reach</h4>
     <h4>Nearby</h4>
+      <div class="panel panel-maps">
         <google-map center="map.center" zoom="map.zoom">
           <marker ng-repeat="m in local_markers" coords="m">
           </marker>
         </google-map>
-
+      </div>
         <h4>Nationwide</h4>
+      <div class="panel panel-maps">
         <google-map center="map2.center" zoom="map2.zoom">
           <marker ng-repeat="m in local_markers" coords="m">
           </marker>
         </google-map>
-        <!--
-        <iframe
-          width="600"
-          height="450"
-          frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAKWn4ClQPX_8P_ESV6RbzZ7aE395r8zUY
-            &q=United+States">
-        </iframe>
-        -->
-    
+      </div>
+     
+  </div>
 </div>
 
 
