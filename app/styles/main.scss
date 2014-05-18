@@ -51,6 +51,10 @@ p {
 .panel {
     border: none;
     box-shadow: 0px 10px 30px #5E5B5B;
+    border-radius: 10px;
+    border-bottom: 1px solid #949494;
+    border-left: 1px solid #949494;
+    border-right: 1px solid #949494;
 }
 
 .gradient {
@@ -65,6 +69,9 @@ p {
 
 .panel-heading {
     height: 70px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top: 1px solid #949494;
 }
 
 .panel-twitter {
@@ -107,6 +114,7 @@ p {
 
 .post-time {
     float: right;
+    padding-top: 3px;
 }
 
 .details {
@@ -118,6 +126,7 @@ p {
 
 .userimage {
     float: left;
+    border-radius: 50%;
 }
 
 .username {
