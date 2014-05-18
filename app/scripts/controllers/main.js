@@ -15,7 +15,7 @@ angular.module('socialwallApp')
   			console.log("Added photo");
   			console.log(JSON.stringify(photo));
   			
-  			var dt = moment(photo.caption.created_time);
+  			var dt = moment.unix(photo.caption.created_time);
   			photo.caption.friendly_time = dt.fromNow().toString();
   			console.log(photo.images.thumbnail.url);
   			console.log(photo.images.standard_resolution.url);
