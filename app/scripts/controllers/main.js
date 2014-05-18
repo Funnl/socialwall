@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('socialwallApp')
-  .controller('MainCtrl', function ($scope, $resource) {
+  .controller('MainCtrl', function ($scope, $resource, $interval) {
 
   	$scope.map = {
 		    center: {
@@ -21,6 +21,21 @@ angular.module('socialwallApp')
 	$scope.local_markers = [];
 
 	var lookupHash = {};
+
+	var stopRefreshingTime = $interval(function(){
+            console.log("Updating last refresh time");
+            _.forEach($scope.tweets, function(tweet, index, arr){
+            	var dt = moment(tweet.created_at);
+        		tweet.friendly_time = dt.fromNow().toString();
+            });
+            _.forEach($scope.photos, function(photo, index, arr){
+            	var dt = moment.unix(photo.caption.created_time);
+  				photo.caption.friendly_time = dt.fromNow().toString();
+            });
+
+            $scope.$digest();
+        },
+        1000 * 60); // repeat every minute
 
 	// converts a "place" as listed in a twitter profile to a lat/lon pair marker for the map
 	$scope.lookup = function(location){
@@ -66,8 +81,8 @@ angular.module('socialwallApp')
   			
   			var dt = moment.unix(photo.caption.created_time);
   			photo.caption.friendly_time = dt.fromNow().toString();
-  			console.log(photo.images.thumbnail.url);
-  			console.log(photo.images.standard_resolution.url);
+  			//console.log(photo.images.thumbnail.url);
+  			//console.log(photo.images.standard_resolution.url);
         $scope.$digest();
   		})
   	})
