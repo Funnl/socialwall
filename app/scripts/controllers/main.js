@@ -1,7 +1,56 @@
 'use strict';
 
 angular.module('socialwallApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, $resource) {
+
+  	$scope.map = {
+		    center: {
+		        latitude: 47.6097,
+		        longitude: -122.3331
+		    },
+		    zoom: 10,
+		    q:"Seattle WA"
+		};
+	$scope.map2 = {
+		    center: {
+		        latitude: 39.50,
+		        longitude: -98.35
+		    },
+		    zoom: 3
+		};
+	$scope.local_markers = [];
+
+	var lookupHash = {};
+
+	// converts a "place" as listed in a twitter profile to a lat/lon pair marker for the map
+	$scope.lookup = function(location){
+		if(!location || location.length < 5 || lookupHash[location]){
+			// do nothing, it's already added
+		}
+		else 
+		{
+			lookupHash[location] = {}; // mark as pending
+			var geocode = $resource("https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&sensor=false&key=AIzaSyBRtkXmoM6l-5pkG58LV-S_FSGZlbAKkEk");
+			geocode.get({}).$promise.then(function(res){
+				console.log("Got GEOCODE result for " + location);
+				console.log(res);
+				if(res.results && res.results[0]){
+					var r = res.results[0];
+					var m = {
+						'latitude': r.geometry.location.lat,
+						'longitude': r.geometry.location.lng
+					};
+					$scope.local_markers.push(m);
+					lookupHash[location] = m;
+					//console.log($scope.m);
+				}
+				//$scope.m = res.;
+			}).catch(function(err){
+				console.log("Got GEOCODE result error");
+				console.log(err);
+			})
+		}
+	}
 
   	$scope.photos = [];
     $scope.tweets = [];
@@ -29,6 +78,8 @@ angular.module('socialwallApp')
         $scope.tweets.unshift(tweet);
         console.log("Added tweet");
         console.log(JSON.stringify(tweet));
+
+        $scope.lookup(tweet.user.location);
         
         var dt = moment(tweet.created_at);
         tweet.friendly_time = dt.fromNow().toString();

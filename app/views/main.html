@@ -43,20 +43,27 @@
   </div>
   <div class="col-md-4">
     <h4 class="text-center">Geographical Reach</h4>
-    <div class="panel panel-default" ng-repeat="vine in vines">
-      <div class="panel-heading">
-        <img class="userimage" ng-src="{{vine.userimageUrl}}">
-        <div class="details">
-          <p class="name">{{vine.name}}</p>
-          <p class="username">@{{vine.username}}</p>
-          <p class="post-time">5 min ago</p>
-        </div>
-      </div>
-      <div class="content">
-        <p>{{vine.content}}</p>
-      </div>
-    </div>
-  </div>
+    <h4>Nearby</h4>
+        <google-map center="map.center" zoom="map.zoom">
+          <marker ng-repeat="m in local_markers" coords="m">
+          </marker>
+        </google-map>
+
+        <h4>Nationwide</h4>
+        <google-map center="map2.center" zoom="map2.zoom">
+          <marker ng-repeat="m in local_markers" coords="m">
+          </marker>
+        </google-map>
+        <!--
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAKWn4ClQPX_8P_ESV6RbzZ7aE395r8zUY
+            &q=United+States">
+        </iframe>
+        -->
+    
 </div>
 
 

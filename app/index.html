@@ -18,6 +18,9 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <style>
+    .angular-google-map-container { height: 400px; }
+    </style>
   </head>
   <body ng-app="socialwallApp">
     <!--[if lt IE 7]>
@@ -65,6 +68,12 @@
     <!-- socket.io -->
     <script src="http://socialwall-api.funnl.co/socket.io/socket.io.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKWn4ClQPX_8P_ESV6RbzZ7aE395r8zUY&sensor=FALSE"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+
     <!-- socket.io -->
 </body>
 </html>
