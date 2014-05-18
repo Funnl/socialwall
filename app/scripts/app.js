@@ -5,7 +5,8 @@ angular.module('socialwallApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'google-maps'
+  'google-maps',
+  'ngAnimate'
 ])
   .config(function ($routeProvider) {
     $routeProvider
