@@ -2,6 +2,11 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
+.content img {
+    box-shadow: 0px 10px 30px #5E5B5B;
+    border: 5px solid #000000
+}
+
 p {
     margin: 0px 0px 0px 0px;
 }
@@ -45,12 +50,12 @@ p {
 
 .panel {
     border: none;
-    box-shadow: 0px 14px 47px #5E5B5B;
+    box-shadow: 0px 10px 30px #5E5B5B;
 }
 
 .gradient {
     background-color: transparent;
-    background-image: linear-gradient(#ffffff, #505050);
+    background-image: linear-gradient(#ffffff, #CACACA);
 }
 
 .panel-heading-twitter {
@@ -92,7 +97,8 @@ p {
 
 .content p {
     margin-left: 15px;
-    padding-top: 10px
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .name {
