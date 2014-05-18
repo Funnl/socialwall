@@ -12,15 +12,15 @@
     <h4 class="text-center">Twitter</h4>
     <div class="panel panel-default" ng-repeat="tweet in tweets">
       <div class="panel-heading">
-        <img class="userimage" ng-src="{{tweet.userimageUrl}}">
+        <img class="userimage" ng-src="{{tweet.user.profile_image_url}}">
         <div class="details">
-          <p class="name">{{tweet.name}}</p>
-          <p class="username">@{{tweet.username}}</p>
-          <p class="post-time">5 min ago</p>
+          <p class="name">{{tweet.user.name}}</p>
+          <p class="username">@{{tweet.user.screen_name}}</p>
+          <p class="post-time">{{tweet.friendly_time}}</p>
         </div>
       </div>
       <div class="content">
-        <p>{{tweet.content}}</p>
+        <p>{{tweet.text}}</p>
       </div>
     </div>
   </div>
