@@ -2,6 +2,34 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
+.panel {
+    border: none;
+    box-shadow: 0px 14px 47px #5E5B5B;
+}
+
+.gradient {
+    background-color: transparent;
+    background-image: linear-gradient(#ffffff, #505050);
+}
+
+.panel-heading-twitter {
+    background-color: #00aced;
+    color: #ffffff;
+}
+
+.panel-twitter {
+    background-color: #ebebeb;
+}
+
+.panel-heading-instagram {
+    background-color: #517fa4;
+    color: #ffffff;
+}
+
+.panel-instagram {
+    background-color: #ebebeb;
+}
+
 .content {
     padding: 10px 10px 10px 10px;
 }
