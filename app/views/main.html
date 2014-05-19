@@ -1,3 +1,4 @@
+<div ng-controller="DataController"></div>
 <div class="header">
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -20,6 +21,7 @@
           <p class="post-time">{{tweet.friendly_time}}</p>
       </div>
       <div class="content">
+      <img class="text-center" width="300" ng-src="{{tweet.entities.media[0].media_url}}" ng-show="tweet.entities.media[0].media_url">
         <p>{{tweet.text}}</p>
       </div>
     </div>
@@ -65,3 +67,5 @@
 <div class="footer">
   <p class="text-center">Made with ♥ at AngelHack Seattle</p>
 </div>
+
+

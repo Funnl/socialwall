@@ -8,7 +8,8 @@ angular.module('socialwallApp', [
   'google-maps',
   'ngAnimate'
 ])
-  .config(function ($routeProvider) {
+  .config(function ($locationProvider, $routeProvider) {
+    $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
