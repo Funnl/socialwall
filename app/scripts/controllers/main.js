@@ -5,10 +5,10 @@ angular.module('socialwallApp')
 
   	$scope.map = {
 		    center: {
-		        latitude: 47.6097,
-		        longitude: -122.3331
+		        latitude: 38.5456,
+		        longitude: -121.4689
 		    },
-		    zoom: 10,
+		    zoom: 5,
 		    q:"Seattle WA"
 		};
 	$scope.map2 = {
@@ -45,7 +45,7 @@ angular.module('socialwallApp')
 		else 
 		{
 			lookupHash[location] = {}; // mark as pending
-			var geocode = $resource("https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&sensor=false&key=AIzaSyBRtkXmoM6l-5pkG58LV-S_FSGZlbAKkEk");
+			var geocode = $resource("https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&sensor=false&key=AIzaSyCUh1kPIIlM7z9QPj3CvSYdFxxpJY6_Ts8");
 			geocode.get({}).$promise.then(function(res){
 				console.log("Got GEOCODE result for " + location);
 				console.log(res);
@@ -111,7 +111,7 @@ angular.module('socialwallApp')
   .controller('DataController', function ($scope, $log, $rootScope) {
 
   	$scope.debugMessages = [];
-  	var socket = io.connect('http://socialwall-api.funnl.co:80');
+  	var socket = io.connect('http://whispering-everglades-6142.herokuapp.com:80');
 	//var socket = io.connect('http://localhost');
 	socket.on('instagram', function(jsonString){
 		$log.info("Got instagram update from api server");
