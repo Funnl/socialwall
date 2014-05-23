@@ -2,6 +2,25 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
+h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.map-heading {
+    margin-bottom: 10px;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.gradient-bg {
+    background-image: linear-gradient(#f8f8f8, rgba(248, 248, 248, 0.75), rgba(248, 248, 248, 0));
+    background-color: transparent;
+    border-bottom: none;
+    }
+
 .logo {
     display: block;
     margin-left: auto;
@@ -13,8 +32,11 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 
+.shadow {
+    box-shadow: 0px 10px 30px #8B8282;
+}
+
 .content img {
-    box-shadow: 0px 10px 30px #5E5B5B;
     border: 5px solid #000000
 }
 
@@ -28,44 +50,42 @@ p {
 
 .ng-enter, 
 .ng-leave { 
-    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -webkit-transition: 500ms cubic-bezier(0.45, 0.02, 0.51, 0.98) all;
+    -moz-transition: 500ms cubic-bezier(0.45, 0.02, 0.51, 0.98) all;
+    -ms-transition: 500ms cubic-bezier(0.45, 0.02, 0.51, 0.98) all;
+    -o-transition: 500ms cubic-bezier(0.45, 0.02, 0.51, 0.98) all;
+    transition: 500ms cubic-bezier(0.45, 0.02, 0.51, 0.98) all;
     position: relative;
     display: block;
 } 
  
+
 .ng-leave.ng-leave-active,
 .ng-enter {
-    -webkit-transform: rotateX(90deg) rotateZ(90deg);
-    -moz-transform: rotateX(90deg) rotateZ(90deg);
-    -ms-transform: rotateX(90deg) rotateZ(90deg);
-    -o-transform: rotateX(90deg) rotateZ(90deg);
-    transform: rotateX(90deg) rotateZ(90deg);
+    -webkit-transform: rotateX(90deg) rotateY(75deg);
+    -moz-transform: rotateX(90deg) rotateY(75deg);
+    -ms-transform: rotateX(90deg) rotateY(75deg);
+    -o-transform: rotateX(90deg) rotateY(75deg);
+    transform: rotateX(90deg) rotateY(75deg);
     opacity: 0;
-    height: 0px;
+    height: 0;
 }        
- 
+
 .ng-enter.ng-enter-active,
 .ng-leave {
-    -webkit-transform: rotateX(0deg) rotateZ(0deg);
-    -moz-transform: rotateX(0deg) rotateZ(0deg);
-    -ms-transform: rotateX(0deg) rotateZ(0deg);
-    -o-transform: rotateX(0deg) rotateZ(0deg);
-    transform: rotateX(0deg) rotateZ(0deg);
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    -ms-transform: rotateX(0deg) rotateY(0deg);
+    -o-transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(0deg) rotateY(0deg);
     opacity: 1;
-    height: 30px;
+    height: 100%;
+
 }
 
 .panel {
     border: none;
-    box-shadow: 0px 10px 30px #5E5B5B;
     border-radius: 10px;
-    border-bottom: 1px solid #949494;
-    border-left: 1px solid #949494;
-    border-right: 1px solid #949494;
 }
 
 .gradient {
@@ -82,7 +102,7 @@ p {
     height: 70px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    border-top: 1px solid #949494;
+    border-bottom: 1px solid #B4B4B4;
 }
 
 .panel-twitter {
@@ -156,7 +176,7 @@ p {
 
 /* Space out content a bit */
 body {
-    padding-top: 90px;
+    padding-top: 80px;
     padding-bottom: 20px;
 }
 
@@ -174,9 +194,7 @@ body {
 
 /* Make the masthead heading the same height as the navigation */
 .header h2 {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 20px 10px 0;
+    vertical-align: middle;
     position: absolute;
 }
 
@@ -216,5 +234,17 @@ body {
     .container {
         margin: 0px 0px 0px 0px;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .fa {
+        font-size: 2em;
     }
 }

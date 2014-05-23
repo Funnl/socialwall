@@ -1,17 +1,17 @@
 <div ng-controller="DataController"></div>
 <div class="header">
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-default navbar-fixed-top gradient-bg" role="navigation">
     <div class="container topbar">
-      <h2>#SACTOAdvantage</h2>
-      <img class="logo" height="70px" src="/images/sacto.png">
+      <h2>#AngelHackDubai</h2>
+      <img class="logo" height="70px" src="/images/angel.png">
     </div>
   </nav>
 </div>
 
 <div class="row">
   <div class="col-md-4">
-    <h4 class="text-center">Twitter</h4>
-    <div class="panel panel-twitter" ng-repeat="tweet in tweets | orderBy:'id_str':true" ng-animate="{ enter: 'enter', leave: 'leave', move: 'move' }">
+    <h4 class="network text-center"><i class="fa fa-twitter"></i></h4>
+    <div class="panel panel-twitter shadow" ng-repeat="tweet in tweets | orderBy:'id_str':true" ng-animate="{ enter: 'enter', leave: 'leave', move: 'move' }">
       <div class="panel-heading panel-heading-twitter">
         <img class="userimage" ng-src="{{tweet.user.profile_image_url}}">
         <div class="details">
@@ -21,14 +21,14 @@
           <p class="post-time">{{tweet.friendly_time}}</p>
       </div>
       <div class="content">
-      <img class="text-center" width="300" ng-src="{{tweet.entities.media[0].media_url}}" ng-show="tweet.entities.media[0].media_url">
+      <img class="text-center shadow" width="300" ng-src="{{tweet.entities.media[0].media_url}}" ng-show="tweet.entities.media[0].media_url">
         <p>{{tweet.text}}</p>
       </div>
     </div>
   </div>
   <div class="col-md-4">
-    <h4 class="text-center">Instagram</h4>
-    <div class="panel panel-instagram" ng-repeat="photo in photos" ng-animate="{ enter: 'enter', leave: 'leave', move: 'move' }">
+    <h4 class="network text-center"><i class="fa fa-instagram"></i></h4>
+    <div class="panel panel-instagram shadow" ng-repeat="photo in photos" ng-animate="{ enter: 'enter', leave: 'leave', move: 'move' }">
       <div class="panel-heading panel-heading-instagram">
         <img class="userimage" height="50" width="50" ng-src="{{photo.user.profile_picture}}">
         <div class="details">
@@ -38,22 +38,22 @@
           <p class="post-time">{{photo.caption.friendly_time}}</p>
       </div>
       <div class="content">
-        <img class="text-center" height="300" width="300" ng-src="{{photo.images.standard_resolution.url}}">
+        <img class="text-center shadow" height="300" width="300" ng-src="{{photo.images.standard_resolution.url}}">
         <p>{{photo.caption.text}}</p>
       </div>
     </div>
   </div>
   <div class="col-md-4">
-    <h4 class="text-center">Geographical Reach</h4>
-    <h4>Nearby</h4>
-      <div class="panel panel-maps">
+    <h4 class="network text-center"><i class="fa fa-globe"></i></h4>
+    <h4 class="map-heading">Nearby</h4>
+      <div class="panel panel-maps shadow">
         <google-map center="map.center" zoom="map.zoom">
           <marker ng-repeat="m in local_markers" coords="m">
           </marker>
         </google-map>
       </div>
-        <h4>Nationwide</h4>
-      <div class="panel panel-maps">
+        <h4 class="map-heading">Everywhere</h4>
+      <div class="panel panel-maps shadow">
         <google-map center="map2.center" zoom="map2.zoom">
           <marker ng-repeat="m in local_markers" coords="m">
           </marker>

@@ -5,18 +5,18 @@ angular.module('socialwallApp')
 
   	$scope.map = {
 		    center: {
-		        latitude: 38.5456,
-		        longitude: -121.4689
+		        latitude: 25.2500,
+		        longitude: 55.3000
 		    },
 		    zoom: 5,
-		    q:"Seattle WA"
+		    q:"Dubai"
 		};
 	$scope.map2 = {
 		    center: {
-		        latitude: 39.50,
-		        longitude: -98.35
+		        latitude: 25.2500,
+            longitude: 55.3000
 		    },
-		    zoom: 3
+		    zoom: 2,
 		};
 	$scope.local_markers = [];
 
